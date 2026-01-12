@@ -1,0 +1,131 @@
+---
+title: Optimizers
+description: Choose and configure the right optimizer for your task
+---
+
+# Optimizers
+
+Trace supports multiple optimization algorithms. Choose the one that fits your needs.
+
+## Available Optimizers
+
+<Cards>
+  <Card 
+    title="Overview" 
+    href="/docs/optimizers/overview"
+    description="Compare optimizers and choose the right one"
+  />
+  <Card 
+    title="OptoPrime" 
+    href="/docs/optimizers/optoprime"
+    description="Trace's flagship optimizer (recommended)"
+  />
+</Cards>
+
+{/* TODO: Add OPRO and TextGrad cards when pages are created */}
+
+## Quick Comparison
+
+| Optimizer | Speed | Graph Usage | Best For |
+|-----------|-------|-------------|----------|
+| **OptoPrime** ⭐ | ⚡⚡ Fast | Full graph | Most use cases |
+| **OPRO** | ⚡⚡⚡ Very Fast | None | Simple prompts |
+| **TextGrad** | 🐌 Slower | Partial graph | Large graphs |
+
+## Switching is Easy
+
+One of Trace's key features is that switching optimizers requires changing just one line:
+
+```python
+from opto.optimizers import OptoPrime, OPRO, TextGrad
+
+# All use the same interface
+optimizer = OptoPrime(params)      # ⭐ Recommended
+# optimizer = OPRO(params)         # For simple cases
+# optimizer = TextGrad(params)     # For large graphs
+```
+
+## How Optimizers Work
+
+All optimizers in Trace follow the same basic pattern:
+
+```python
+# 1. Create optimizer with trainable parameters
+optimizer = OptoPrime(my_function.parameters())
+
+# 2. Run your AI system
+output = my_function(input_data)
+
+# 3. Get feedback on the output
+feedback = evaluate(output)
+
+# 4. Update parameters
+optimizer.zero_feedback()          # Clear previous feedback
+optimizer.backward(output, feedback)  # Propagate feedback
+optimizer.step()                   # Update parameters
+```
+
+## Choosing an Optimizer
+
+### Use OptoPrime when:
+- ✅ You're just getting started (recommended default)
+- ✅ You want fast convergence
+- ✅ Your graph is reasonably sized
+- ✅ You want to leverage the full computation graph
+
+### Use OPRO when:
+- ✅ You're only optimizing prompts/instructions
+- ✅ You want the absolute fastest optimization
+- ✅ You don't need graph information
+
+### Use TextGrad when:
+- ✅ Your computation graph is very large
+- ✅ You need node-by-node optimization
+- ✅ Speed is less important than thoroughness
+
+## Optimizer Configuration
+
+Each optimizer supports various configuration options:
+
+```python
+optimizer = OptoPrime(
+    parameters,
+    # Add optimizer-specific config here
+)
+```
+
+See individual optimizer pages for detailed configuration options.
+
+## Performance Tips
+
+- Start with **OptoPrime** - it works well for most cases
+- Use **OPRO** for quick experiments with simple prompts
+- Switch to **TextGrad** if you hit context length limits
+- Monitor convergence and adjust as needed
+
+## Research & Citations
+
+### OptoPrime (Trace)
+Our proposed method from the [NeurIPS 2024 paper](https://arxiv.org/abs/2406.16218):
+```bibtex
+@article{cheng2024trace,
+  title={Trace is the Next AutoDiff},
+  author={Cheng, Ching-An and Nie, Allen and Swaminathan, Adith},
+  year={2024}
+}
+```
+
+### OPRO
+Based on [Large Language Models as Optimizers](https://arxiv.org/abs/2309.03409)
+
+### TextGrad
+Based on [Automatic "Differentiation" via Text](https://arxiv.org/abs/2406.07496)
+
+## Next Steps
+
+<Cards>
+  <Card title="Optimizer Comparison" href="/docs/optimizers/overview" />
+  <Card title="OptoPrime Guide" href="/docs/optimizers/optoprime" />
+  <Card title="Quick Start" href="/docs/getting-started/quick-start" />
+</Cards>
+

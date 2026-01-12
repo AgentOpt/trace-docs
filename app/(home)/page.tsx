@@ -70,35 +70,37 @@ export default function HomePage() {
             </p>
           </div>
           
-          <div className="rounded-xl border border-fd-border bg-fd-card overflow-hidden shadow-2xl">
-            <div className="bg-fd-muted/50 px-4 py-2 border-b border-fd-border flex items-center gap-2">
+          <div className="rounded-xl border border-fd-border bg-[#0d1117] overflow-hidden shadow-2xl">
+            <div className="bg-[#161b22] px-4 py-2 border-b border-[#30363d] flex items-center gap-2">
               <div className="flex gap-1.5">
                 <div className="h-3 w-3 rounded-full bg-red-500/80" />
                 <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
                 <div className="h-3 w-3 rounded-full bg-green-500/80" />
               </div>
-              <span className="text-xs text-fd-muted-foreground ml-2">quickstart.py</span>
+              <span className="text-xs text-[#8b949e] ml-2">quickstart.py</span>
             </div>
             <pre className="p-6 overflow-x-auto text-sm leading-relaxed">
-              <code>{`from opto.trace import node, bundle
-from opto.optimizers import OptoPrime
-
-# Define trainable function
-@bundle(trainable=True)
-def strange_sort_list(lst):
-    '''Sort list in strange order: min, max, min, max...'''
-    return sorted(lst)
-
-# Optimize with feedback
-optimizer = OptoPrime(strange_sort_list.parameters())
-
-for epoch in range(5):
-    output = strange_sort_list([1, 2, 3, 4])
-    feedback = check_correctness(output)
-    
-    optimizer.zero_feedback()
-    optimizer.backward(output, feedback)
-    optimizer.step()  # LLM updates the function!`}</code>
+              <code className="language-python">
+                <span className="text-[#ff7b72]">from</span> <span className="text-[#d2a8ff]">opto.trace</span> <span className="text-[#ff7b72]">import</span> <span className="text-[#d2a8ff]">node</span><span className="text-[#c9d1d9]">,</span> <span className="text-[#d2a8ff]">bundle</span>{'\n'}
+                <span className="text-[#ff7b72]">from</span> <span className="text-[#d2a8ff]">opto.optimizers</span> <span className="text-[#ff7b72]">import</span> <span className="text-[#d2a8ff]">OptoPrime</span>{'\n'}
+                {'\n'}
+                <span className="text-[#8b949e]"># Define trainable function</span>{'\n'}
+                <span className="text-[#d2a8ff]">@bundle</span><span className="text-[#c9d1d9]">(</span><span className="text-[#79c0ff]">trainable</span><span className="text-[#ff7b72]">=</span><span className="text-[#79c0ff]">True</span><span className="text-[#c9d1d9]">)</span>{'\n'}
+                <span className="text-[#ff7b72]">def</span> <span className="text-[#d2a8ff]">strange_sort_list</span><span className="text-[#c9d1d9]">(</span><span className="text-[#ffa657]">lst</span><span className="text-[#c9d1d9]">):</span>{'\n'}
+                <span className="text-[#c9d1d9]">    </span><span className="text-[#a5d6ff]">'''Sort list in strange order: min, max, min, max...'''</span>{'\n'}
+                <span className="text-[#c9d1d9]">    </span><span className="text-[#ff7b72]">return</span> <span className="text-[#d2a8ff]">sorted</span><span className="text-[#c9d1d9]">(</span><span className="text-[#ffa657]">lst</span><span className="text-[#c9d1d9]">)</span>{'\n'}
+                {'\n'}
+                <span className="text-[#8b949e]"># Optimize with feedback</span>{'\n'}
+                <span className="text-[#ffa657]">optimizer</span> <span className="text-[#ff7b72]">=</span> <span className="text-[#d2a8ff]">OptoPrime</span><span className="text-[#c9d1d9]">(</span><span className="text-[#ffa657]">strange_sort_list</span><span className="text-[#c9d1d9]">.</span><span className="text-[#d2a8ff]">parameters</span><span className="text-[#c9d1d9]">())</span>{'\n'}
+                {'\n'}
+                <span className="text-[#ff7b72]">for</span> <span className="text-[#ffa657]">epoch</span> <span className="text-[#ff7b72]">in</span> <span className="text-[#d2a8ff]">range</span><span className="text-[#c9d1d9]">(</span><span className="text-[#a5d6ff]">5</span><span className="text-[#c9d1d9]">):</span>{'\n'}
+                <span className="text-[#c9d1d9]">    </span><span className="text-[#ffa657]">output</span> <span className="text-[#ff7b72]">=</span> <span className="text-[#d2a8ff]">strange_sort_list</span><span className="text-[#c9d1d9]">([</span><span className="text-[#a5d6ff]">1</span><span className="text-[#c9d1d9]">,</span> <span className="text-[#a5d6ff]">2</span><span className="text-[#c9d1d9]">,</span> <span className="text-[#a5d6ff]">3</span><span className="text-[#c9d1d9]">,</span> <span className="text-[#a5d6ff]">4</span><span className="text-[#c9d1d9]">])</span>{'\n'}
+                <span className="text-[#c9d1d9]">    </span><span className="text-[#ffa657]">feedback</span> <span className="text-[#ff7b72]">=</span> <span className="text-[#d2a8ff]">check_correctness</span><span className="text-[#c9d1d9]">(</span><span className="text-[#ffa657]">output</span><span className="text-[#c9d1d9]">)</span>{'\n'}
+                <span className="text-[#c9d1d9]">    </span>{'\n'}
+                <span className="text-[#c9d1d9]">    </span><span className="text-[#ffa657]">optimizer</span><span className="text-[#c9d1d9]">.</span><span className="text-[#d2a8ff]">zero_feedback</span><span className="text-[#c9d1d9]">()</span>{'\n'}
+                <span className="text-[#c9d1d9]">    </span><span className="text-[#ffa657]">optimizer</span><span className="text-[#c9d1d9]">.</span><span className="text-[#d2a8ff]">backward</span><span className="text-[#c9d1d9]">(</span><span className="text-[#ffa657]">output</span><span className="text-[#c9d1d9]">,</span> <span className="text-[#ffa657]">feedback</span><span className="text-[#c9d1d9]">)</span>{'\n'}
+                <span className="text-[#c9d1d9]">    </span><span className="text-[#ffa657]">optimizer</span><span className="text-[#c9d1d9]">.</span><span className="text-[#d2a8ff]">step</span><span className="text-[#c9d1d9]">()</span>  <span className="text-[#8b949e]"># LLM updates the function!</span>
+              </code>
             </pre>
           </div>
         </div>
@@ -192,7 +194,7 @@ for epoch in range(5):
 
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Link
-              href="/docs/getting-started"
+              href="/docs/getting-started/installation"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-fd-primary px-6 py-3 text-fd-primary-foreground font-semibold hover:bg-fd-primary/90 transition-all"
             >
               Read the Docs
@@ -200,10 +202,10 @@ for epoch in range(5):
             </Link>
             
             <Link
-              href="/docs/tutorials"
+              href="/docs/examples"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-fd-border px-6 py-3 font-semibold hover:bg-fd-muted/50 transition-all"
             >
-              View Tutorials
+              View Examples
             </Link>
           </div>
         </div>

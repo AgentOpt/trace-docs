@@ -1,0 +1,105 @@
+---
+title: Getting Started
+description: Get up and running with Trace in minutes
+---
+
+# Getting Started with Trace
+
+Welcome! This guide will help you install, configure, and start using Trace.
+
+## What You'll Learn
+
+In this section, you'll learn how to:
+- ✅ Install Trace and its dependencies
+- ✅ Configure LLM backends (OpenAI, Anthropic, etc.)
+- ✅ Build your first optimizable function
+- ✅ Run your first optimization
+
+## Quick Navigation
+
+<Cards>
+  <Card 
+    title="Installation" 
+    href="/docs/getting-started/installation"
+    description="Install Trace via pip and set up your environment"
+  />
+  <Card 
+    title="Quick Start" 
+    href="/docs/getting-started/quick-start"
+    description="Build your first optimizable AI agent in 5 minutes"
+  />
+  <Card 
+    title="Configuration" 
+    href="/docs/getting-started/configuration"
+    description="Configure LLM backends and API keys"
+  />
+</Cards>
+
+## Installation (30 seconds)
+
+```bash
+pip install trace-opt
+```
+
+That's it! Trace is now installed.
+
+## Set Up Your API Key (1 minute)
+
+```python
+import os
+os.environ['OPENAI_API_KEY'] = 'your-api-key-here'
+```
+
+## Your First Example (2 minutes)
+
+```python
+from opto.trace import node, bundle
+from opto.optimizers import OptoPrime
+
+@bundle(trainable=True)
+def greet(name):
+    """Greet the user."""
+    return f"Hey {name}"
+
+optimizer = OptoPrime(greet.parameters())
+
+# Optimize the greeting to be more professional
+output = greet("Alice")
+feedback = "Make it more professional and formal"
+
+optimizer.zero_feedback()
+optimizer.backward(output, feedback)
+optimizer.step()
+
+# Try again
+print(greet("Alice"))  # Should be more formal now!
+```
+
+## What's Next?
+
+Choose your path:
+
+### 🚀 Fast Track
+Jump straight to the [Quick Start](/docs/getting-started/quick-start) and build something!
+
+### 📚 Deep Dive
+Learn the [Core Concepts](/docs/core-concepts) to understand how Trace works.
+
+### 💡 Learn by Example
+Browse [Examples](/docs/examples) to see Trace in action.
+
+## Need Help?
+
+- Join our [Discord](https://discord.gg/4VeAvwFcWy)
+- Check [GitHub Issues](https://github.com/AgentOpt/Trace/issues)
+- Read the [Paper](https://arxiv.org/abs/2406.16218)
+
+## Prerequisites
+
+You should be comfortable with:
+- Python programming (3.10+)
+- Basic machine learning concepts
+- Using APIs (optional)
+
+No prior experience with optimization or LLMs required!
+

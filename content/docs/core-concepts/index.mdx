@@ -1,0 +1,115 @@
+---
+title: Core Concepts
+description: Understanding the fundamental concepts of Trace
+---
+
+# Core Concepts
+
+Learn the fundamental concepts that power Trace's optimization framework.
+
+## Overview
+
+Trace brings AutoDiff-like optimization to AI systems. Instead of backpropagating numerical gradients through neural networks, Trace backpropagates **feedback** through **computation graphs** of AI agent execution.
+
+## Key Concepts
+
+<Cards>
+  <Card 
+    title="Computation Graph" 
+    href="/docs/core-concepts/computation-graph"
+    description="How Trace captures and represents AI system execution"
+  />
+  <Card 
+    title="Nodes and Bundles" 
+    href="/docs/core-concepts/nodes-and-bundles"
+    description="The fundamental primitives for building optimizable systems"
+  />
+  <Card 
+    title="Trainable Parameters" 
+    href="/docs/core-concepts/trainable-parameters"
+    description="Defining what can be optimized in your AI system"
+  />
+  <Card 
+    title="Feedback Functions" 
+    href="/docs/core-concepts/feedback-functions"
+    description="Using feedback to guide optimization"
+  />
+</Cards>
+
+## The Big Picture
+
+Think of Trace as **PyTorch for AI agents**:
+
+| PyTorch | Trace |
+|---------|-------|
+| Neural networks | AI agent workflows |
+| Tensors | Python objects (any type) |
+| Forward pass | Agent execution |
+| Loss function | Feedback function |
+| Gradients | Natural language feedback |
+| Backward pass | Feedback propagation through graph |
+| Weight updates | Code/prompt updates |
+
+## Quick Example
+
+Here's how the concepts work together:
+
+```python
+from opto.trace import node, bundle
+from opto.optimizers import OptoPrime
+
+# 1. Define trainable parameters (like nn.Parameter)
+@bundle(trainable=True)
+def agent_function(input):
+    """This can be optimized."""
+    return "Process: " + input
+
+# 2. Execute (forward pass)
+output = agent_function("user request")
+
+# 3. Get feedback (like computing loss)
+feedback = "Make it more concise and professional"
+
+# 4. Optimize (backward pass + optimizer step)
+optimizer = OptoPrime(agent_function.parameters())
+optimizer.zero_feedback()
+optimizer.backward(output, feedback)
+optimizer.step()
+
+# 5. New behavior learned!
+new_output = agent_function("user request")
+```
+
+## Learning Path
+
+We recommend learning these concepts in order:
+
+1. **Start**: [Computation Graph](/docs/core-concepts/computation-graph) - Understand how Trace tracks execution
+2. **Build**: [Nodes and Bundles](/docs/core-concepts/nodes-and-bundles) - Learn to define optimizable components
+3. **Configure**: [Trainable Parameters](/docs/core-concepts/trainable-parameters) - Mark what should be optimized
+4. **Guide**: [Feedback Functions](/docs/core-concepts/feedback-functions) - Direct the optimization process
+
+## Advanced Topics
+
+Once you understand the basics:
+- Explore different [Optimizers](/docs/optimizers)
+- Read [Best Practices](/docs/guides/best-practices)
+- Study [Examples](/docs/examples)
+
+## Why These Concepts Matter
+
+Understanding these core concepts will help you:
+- ✅ Design effective AI systems
+- ✅ Debug optimization issues
+- ✅ Choose the right optimizer
+- ✅ Write better feedback functions
+- ✅ Build complex multi-agent systems
+
+## Next Steps
+
+<Cards>
+  <Card title="Computation Graph" href="/docs/core-concepts/computation-graph" />
+  <Card title="Quick Start" href="/docs/getting-started/quick-start" />
+  <Card title="Examples" href="/docs/examples" />
+</Cards>
+
