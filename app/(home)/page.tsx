@@ -11,7 +11,7 @@ export default function HomePage() {
           <span>AutoDiff for AI Agents</span>
         </div>
         
-        <h1 className="mb-6 max-w-4xl text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-r from-fd-foreground to-fd-muted-foreground bg-clip-text text-transparent">
+        <h1 className="mb-6 max-w-4xl text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-r from-pink-400 via-fuchsia-500 to-purple-500 bg-clip-text text-transparent">
           End-to-end Optimization for AI Systems
         </h1>
         
