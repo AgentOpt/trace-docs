@@ -28,7 +28,7 @@ import argparse
 class NotebookConverter:
     """Convert Jupyter notebooks to MDX format."""
     
-    def __init__(self, trace_repo_url: str = "https://github.com/AgentOpt/Trace"):
+    def __init__(self, trace_repo_url: str = "https://github.com/AgentOpt/OpenTrace"):
         self.trace_repo_url = trace_repo_url
     
     def extract_title(self, cells: List[Dict[str, Any]]) -> str:

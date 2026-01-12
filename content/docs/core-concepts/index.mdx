@@ -1,15 +1,15 @@
 ---
 title: Core Concepts
-description: Understanding the fundamental concepts of Trace
+description: Understanding the fundamental concepts of Trace2
 ---
 
 # Core Concepts
 
-Learn the fundamental concepts that power Trace's optimization framework.
+Learn the fundamental concepts that power Trace2's optimization framework.
 
 ## Overview
 
-Trace brings AutoDiff-like optimization to AI systems. Instead of backpropagating numerical gradients through neural networks, Trace backpropagates **feedback** through **computation graphs** of AI agent execution.
+Trace2 brings AutoDiff-like optimization to AI systems. Instead of backpropagating numerical gradients through neural networks, Trace2 backpropagates **feedback** through **computation graphs** of AI agent execution.
 
 ## Key Concepts
 
@@ -17,7 +17,7 @@ Trace brings AutoDiff-like optimization to AI systems. Instead of backpropagatin
   <Card 
     title="Computation Graph" 
     href="/docs/core-concepts/computation-graph"
-    description="How Trace captures and represents AI system execution"
+    description="How Trace2 captures and represents AI system execution"
   />
   <Card 
     title="Nodes and Bundles" 
@@ -38,9 +38,9 @@ Trace brings AutoDiff-like optimization to AI systems. Instead of backpropagatin
 
 ## The Big Picture
 
-Think of Trace as **PyTorch for AI agents**:
+Think of Trace2 as **PyTorch for AI agents**:
 
-| PyTorch | Trace |
+| PyTorch | Trace2 |
 |---------|-------|
 | Neural networks | AI agent workflows |
 | Tensors | Python objects (any type) |
@@ -84,7 +84,7 @@ new_output = agent_function("user request")
 
 We recommend learning these concepts in order:
 
-1. **Start**: [Computation Graph](/docs/core-concepts/computation-graph) - Understand how Trace tracks execution
+1. **Start**: [Computation Graph](/docs/core-concepts/computation-graph) - Understand how Trace2 tracks execution
 2. **Build**: [Nodes and Bundles](/docs/core-concepts/nodes-and-bundles) - Learn to define optimizable components
 3. **Configure**: [Trainable Parameters](/docs/core-concepts/trainable-parameters) - Mark what should be optimized
 4. **Guide**: [Feedback Functions](/docs/core-concepts/feedback-functions) - Direct the optimization process

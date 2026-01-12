@@ -1,27 +1,27 @@
 ---
 title: Computation Graph
-description: Understanding how Trace builds and uses computation graphs
+description: Understanding how Trace2 builds and uses computation graphs
 ---
 
 # Computation Graph
 
-Trace automatically builds a computation graph of your AI system's execution, similar to how PyTorch builds graphs for neural networks.
+Trace2 automatically builds a computation graph of your AI system's execution, similar to how PyTorch builds graphs for neural networks.
 
 ## What is a Computation Graph?
 
 {/* TODO: Explain:
      - What a computation graph is
-     - How Trace captures execution traces
+     - How Trace2 captures execution traces
      - The difference between forward and backward passes
      - Visual diagram would be helpful */}
 
-## How Trace Builds Graphs
+## How Trace2 Builds Graphs
 
 [Add explanation]
 
 ## Visualizing Graphs
 
-Trace provides built-in visualization:
+Trace2 provides built-in visualization:
 
 ```python
 z.backward("maximize z", visualize=True, print_limit=25)
@@ -35,7 +35,7 @@ z.backward("maximize z", visualize=True, print_limit=25)
 
 ## Comparison to AutoDiff
 
-| Feature | AutoDiff (PyTorch) | Trace |
+| Feature | AutoDiff (PyTorch) | Trace2 |
 |---------|-------------------|-------|
 | Input | Tensors | Any Python objects |
 | Operations | Math operations | Any function calls |

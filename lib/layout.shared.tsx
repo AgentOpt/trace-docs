@@ -36,7 +36,7 @@ export function baseOptions(): BaseLayoutProps {
               opacity="0.5"
             />
           </svg>
-          <span className="font-bold">Trace</span>
+          <span className="font-bold">Trace2</span>
         </>
       ),
     },
@@ -49,7 +49,7 @@ export function baseOptions(): BaseLayoutProps {
       },
       {
         text: 'GitHub',
-        url: 'https://github.com/AgentOpt/Trace',
+        url: 'https://github.com/AgentOpt/OpenTrace',
         external: true,
       },
       {

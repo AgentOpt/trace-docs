@@ -11,8 +11,9 @@ export default function HomePage() {
           <span>AutoDiff for AI Agents</span>
         </div>
         
-        <h1 className="mb-6 max-w-4xl text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-r from-pink-400 via-fuchsia-500 to-purple-500 bg-clip-text text-transparent">
-          End-to-end Optimization for AI Systems
+        <h1 className="mb-6 max-w-5xl text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-pink-400 via-fuchsia-500 to-purple-500 bg-clip-text text-transparent leading-tight">
+          {/* End-to-end Optimization for AI Systems */}
+          Welcome to the Era of Visual Agents with Trace2
         </h1>
         
         <p className="mb-10 max-w-2xl text-lg text-fd-muted-foreground sm:text-xl">
@@ -110,7 +111,7 @@ export default function HomePage() {
       <section className="border-t border-fd-border bg-fd-muted/20 px-4 py-20">
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Why Trace?</h2>
+            <h2 className="text-3xl font-bold mb-4">Why Trace2?</h2>
             <p className="text-fd-muted-foreground text-lg">
               A new paradigm for training AI systems end-to-end
             </p>
@@ -185,7 +186,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to optimize your AI agents?</h2>
           <p className="text-fd-muted-foreground text-lg mb-8">
-            Install Trace and start building self-improving AI systems in minutes.
+            Install Trace2 and start building self-improving AI systems in minutes.
           </p>
           
           <div className="mb-8 rounded-lg border border-fd-border bg-fd-muted/50 p-4 font-mono text-sm">
