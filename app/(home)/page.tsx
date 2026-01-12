@@ -30,7 +30,7 @@ export default function HomePage() {
           </Link>
           
           <Link
-            href="https://github.com/AgentOpt/Trace"
+            href="https://github.com/AgentOpt/OpenTrace"
             target="_blank"
             className="inline-flex items-center gap-2 rounded-lg border border-fd-border bg-fd-background px-6 py-3 font-semibold hover:bg-fd-muted/50 transition-all"
           >
