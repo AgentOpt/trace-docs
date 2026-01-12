@@ -9,8 +9,7 @@
     "postinstall": "fumadocs-mdx",
     "docs:generate-api": "python3 scripts/generate_api_docs.py",
     "docs:convert-notebooks": "python3 scripts/convert_notebooks.py --all",
-    "docs:generate-all": "npm run docs:generate-api && npm run docs:convert-notebooks",
-    "prebuild": "npm run docs:generate-all"
+    "docs:generate-all": "npm run docs:generate-api && npm run docs:convert-notebooks"
   },
   "dependencies": {
     "fumadocs-core": "15.8.3",
