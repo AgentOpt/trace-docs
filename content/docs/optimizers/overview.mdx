@@ -1,0 +1,80 @@
+---
+title: Optimizers Overview
+description: Compare and choose the right optimizer for your task
+---
+
+# Optimizers Overview
+
+Trace currently supports three optimization algorithms, each with different trade-offs.
+
+## Quick Comparison
+
+| Optimizer | Uses Graph | Speed | Context Usage | Best For |
+|-----------|-----------|-------|---------------|----------|
+| **OPRO** | ❌ | ⚡⚡⚡ | Low | Simple prompt optimization |
+| **TextGrad** | ✅ | 🐌 | Low | Large graphs, step-by-step optimization |
+| **OptoPrime** | ✅ | ⚡⚡ | High | Fast optimization with full context |
+
+## OPRO
+
+{/* TODO: Brief overview of OPRO
+     - Original paper reference
+     - When to use it
+     - Link to detailed guide */}
+
+[Learn more about OPRO →](/docs/optimizers/opro)
+
+## TextGrad
+
+{/* TODO: Brief overview of TextGrad
+     - Original paper reference
+     - When to use it
+     - Link to detailed guide */}
+
+[Learn more about TextGrad →](/docs/optimizers/textgrad)
+
+## OptoPrime
+
+{/* TODO: Brief overview of OptoPrime (Trace's algorithm)
+     - Paper reference
+     - When to use it
+     - Link to detailed guide */}
+
+[Learn more about OptoPrime →](/docs/optimizers/optoprime)
+
+## Switching Optimizers
+
+One of Trace's key features is that you can easily switch between optimizers:
+
+```python
+from opto.optimizers import OptoPrime, OPRO, TextGrad
+
+# All use the same interface
+optimizer1 = OptoPrime(params)
+optimizer2 = OPRO(params)
+optimizer3 = TextGrad(params)
+```
+
+## Performance Comparison
+
+{/* TODO: Add benchmarks from the paper
+     - Table or chart comparing performance
+     - Different task types
+     - Speed vs quality trade-offs */}
+
+## Choosing an Optimizer
+
+{/* TODO: Decision guide:
+     - Start with OptoPrime for most cases
+     - Use OPRO for simple prompts
+     - Use TextGrad for very large graphs
+     - Task-specific recommendations */}
+
+## Next Steps
+
+<Cards>
+  <Card title="OptoPrime Guide" href="/docs/optimizers/optoprime" />
+  <Card title="OPRO Guide" href="/docs/optimizers/opro" />
+  <Card title="TextGrad Guide" href="/docs/optimizers/textgrad" />
+</Cards>
+

@@ -1,0 +1,82 @@
+---
+title: Nodes and Bundles
+description: Learn about Trace's core primitives for building optimizable systems
+---
+
+# Nodes and Bundles
+
+Trace has two fundamental primitives: `node` and `bundle`.
+
+## Nodes
+
+A `node` wraps any Python value and tracks operations on it.
+
+### Creating Nodes
+
+```python
+from opto.trace import node
+
+x = node(1, trainable=True)
+y = node(3)
+z = x / y
+```
+
+### Trainable Nodes
+
+{/* TODO: Explain:
+     - What trainable=True means
+     - How optimizers can modify trainable nodes
+     - When to mark something as trainable */}
+
+### Node Operations
+
+[Add explanation of automatic tracing]
+
+## Bundles
+
+A `bundle` wraps a Python function, making it optimizable.
+
+### Creating Bundles
+
+```python
+from opto.trace import bundle
+
+@bundle(trainable=True)
+def my_function(x):
+    """This function can be optimized by Trace."""
+    return x * 2
+```
+
+### Trainable Functions
+
+{/* TODO: Explain:
+     - How functions can be optimized
+     - What happens during optimization
+     - Best practices for writing trainable functions */}
+
+## The Model Decorator
+
+For complex agents, use `@trace.model`:
+
+```python
+from opto import trace
+
+@trace.model
+class Agent:
+    def __init__(self, system_prompt):
+        self.system_prompt = system_prompt
+        self.instruction = trace.node("Be helpful", trainable=True)
+    
+    def __call__(self, user_input):
+        return trace.operators.call_llm(self.system_prompt, self.instruction, user_input)
+```
+
+{/* TODO: Explain the model decorator in detail */}
+
+## Next Steps
+
+<Cards>
+  <Card title="Trainable Parameters" href="/docs/core-concepts/trainable-parameters" />
+  <Card title="Examples" href="/docs/examples" />
+</Cards>
+

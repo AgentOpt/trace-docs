@@ -1392,6 +1392,14 @@ fumadocs-mdx@12.0.2:
     unist-util-visit "^5.0.0"
     zod "^4.1.11"
 
+fumadocs-python@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/fumadocs-python/-/fumadocs-python-0.0.5.tgz#ad2e6a260fc70070cc59348e12b15b445b4a8a97"
+  integrity sha512-zQOb7R8xu+qtOn/GdukBd2vUP1QfnTXQmWq1lbVoq7omQdXQ51U9hObVYAKOjGRLAx/wk1ho2ZNk3BaA+KbUIA==
+  dependencies:
+    class-variance-authority "^0.7.1"
+    js-yaml "^4.1.0"
+
 fumadocs-ui@15.8.3:
   version "15.8.3"
   resolved "https://registry.yarnpkg.com/fumadocs-ui/-/fumadocs-ui-15.8.3.tgz#70fd3e923872120ea124aeb351d167f04c560c4e"

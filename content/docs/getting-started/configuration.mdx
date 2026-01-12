@@ -1,0 +1,69 @@
+---
+title: Configuration
+description: Configure LLM backends and API keys for Trace
+---
+
+# Configuration
+
+Trace supports multiple LLM backends through LiteLLM and AutoGen.
+
+## LLM Backend Setup
+
+### Default: LiteLLM
+
+By default, Trace uses [LiteLLM](https://docs.litellm.ai/) which supports 100+ LLM providers.
+
+#### OpenAI
+
+```python
+import os
+os.environ["OPENAI_API_KEY"] = "sk-..."
+os.environ["TRACE_LITELLM_MODEL"] = "gpt-4o"
+```
+
+#### Anthropic
+
+```python
+import os
+os.environ["ANTHROPIC_API_KEY"] = "sk-ant-..."
+os.environ["TRACE_LITELLM_MODEL"] = "claude-3-5-sonnet-20241022"
+```
+
+#### Other Providers
+
+See [LiteLLM documentation](https://docs.litellm.ai/docs/providers) for other providers.
+
+### AutoGen Backend
+
+{/* TODO: Document AutoGen configuration */}
+
+For backward compatibility, Trace supports AutoGen v0.2:
+
+```bash
+pip install trace-opt[autogen]
+```
+
+[Add AutoGen configuration details]
+
+## Switching Backends
+
+```python
+import os
+os.environ["TRACE_DEFAULT_LLM_BACKEND"] = "LiteLLM"  # or "AutoGen"
+```
+
+## Advanced Configuration
+
+{/* TODO: Document advanced options like:
+     - Custom LLM parameters
+     - Retry logic
+     - Caching
+     - Logging */}
+
+## Next Steps
+
+<Cards>
+  <Card title="Start Optimizing" href="/docs/getting-started/quick-start" />
+  <Card title="LLM Backends Guide" href="/docs/guides/llm-backends" />
+</Cards>
+

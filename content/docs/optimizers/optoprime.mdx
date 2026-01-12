@@ -1,0 +1,79 @@
+---
+title: OptoPrime
+description: Trace's flagship optimizer using full computation graphs
+---
+
+# OptoPrime
+
+OptoPrime is Trace's proposed optimization algorithm that leverages the entire computation graph for efficient optimization.
+
+## Overview
+
+{/* TODO: Explain OptoPrime:
+     - How it works
+     - Key innovations
+     - When to use it
+     - Paper reference */}
+
+## Basic Usage
+
+```python
+from opto.optimizers import OptoPrime
+
+optimizer = OptoPrime(model.parameters())
+
+for epoch in range(num_epochs):
+    output = model(input_data)
+    feedback = evaluate(output)
+    
+    optimizer.zero_feedback()
+    optimizer.backward(output, feedback)
+    optimizer.step()
+```
+
+## Configuration Options
+
+{/* TODO: Document parameters:
+     - Learning rate equivalent
+     - Model selection
+     - Memory settings
+     - Verbosity options */}
+
+## How It Works
+
+{/* TODO: Explain the algorithm:
+     1. Graph construction
+     2. Feedback propagation
+     3. Parameter updates
+     4. Diagram would be helpful */}
+
+## Advanced Usage
+
+{/* TODO: Document:
+     - Multi-parameter optimization
+     - Custom feedback processing
+     - Checkpointing
+     - Debugging tips */}
+
+## Performance Tips
+
+{/* TODO: Best practices:
+     - Batch size considerations
+     - When to checkpoint
+     - Memory management
+     - Model selection strategies */}
+
+## Examples
+
+{/* TODO: Link to examples:
+     - Code optimization
+     - Agent building
+     - Multi-agent systems */}
+
+## Next Steps
+
+<Cards>
+  <Card title="Core Concepts" href="/docs/core-concepts" />
+  <Card title="Tutorials" href="/docs/tutorials" />
+</Cards>
+

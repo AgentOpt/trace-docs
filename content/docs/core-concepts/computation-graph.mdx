@@ -1,0 +1,51 @@
+---
+title: Computation Graph
+description: Understanding how Trace builds and uses computation graphs
+---
+
+# Computation Graph
+
+Trace automatically builds a computation graph of your AI system's execution, similar to how PyTorch builds graphs for neural networks.
+
+## What is a Computation Graph?
+
+{/* TODO: Explain:
+     - What a computation graph is
+     - How Trace captures execution traces
+     - The difference between forward and backward passes
+     - Visual diagram would be helpful */}
+
+## How Trace Builds Graphs
+
+[Add explanation]
+
+## Visualizing Graphs
+
+Trace provides built-in visualization:
+
+```python
+z.backward("maximize z", visualize=True, print_limit=25)
+```
+
+{/* TODO: Add example visualization screenshot */}
+
+## Graph Propagation
+
+{/* TODO: Explain how feedback propagates through the graph */}
+
+## Comparison to AutoDiff
+
+| Feature | AutoDiff (PyTorch) | Trace |
+|---------|-------------------|-------|
+| Input | Tensors | Any Python objects |
+| Operations | Math operations | Any function calls |
+| Gradient | Numerical | Natural language feedback |
+| Output | Updated weights | Updated code/prompts |
+
+## Next Steps
+
+<Cards>
+  <Card title="Nodes and Bundles" href="/docs/core-concepts/nodes-and-bundles" />
+  <Card title="Optimizers" href="/docs/optimizers" />
+</Cards>
+

@@ -1,0 +1,90 @@
+---
+title: LLM Backends
+description: Comprehensive guide to configuring LLM backends in Trace
+---
+
+# LLM Backends
+
+Trace supports multiple LLM backend systems for maximum flexibility.
+
+## Backend Options
+
+### LiteLLM (Default)
+
+{/* TODO: Explain LiteLLM:
+     - What it is
+     - Why it's the default
+     - Supported providers */}
+
+### AutoGen
+
+{/* TODO: Explain AutoGen:
+     - Legacy compatibility
+     - When to use it
+     - Migration guide */}
+
+## Configuration
+
+### Setting the Default Backend
+
+```python
+import os
+os.environ["TRACE_DEFAULT_LLM_BACKEND"] = "LiteLLM"  # or "AutoGen"
+```
+
+{/* TODO: Add more configuration details */}
+
+## Provider Setup
+
+### OpenAI
+
+[Add setup guide]
+
+### Anthropic
+
+[Add setup guide]
+
+### Azure OpenAI
+
+[Add setup guide]
+
+### Local Models
+
+{/* TODO: Document local model setup:
+     - Ollama
+     - vLLM
+     - Other local options */}
+
+## Advanced Topics
+
+### Caching
+
+{/* TODO: Document caching strategies */}
+
+### Rate Limiting
+
+{/* TODO: Document rate limit handling */}
+
+### Error Handling
+
+{/* TODO: Document retry logic and error handling */}
+
+### Cost Tracking
+
+{/* TODO: If available, document cost tracking features */}
+
+## Troubleshooting
+
+{/* TODO: Common issues:
+     - API key errors
+     - Rate limits
+     - Model not found
+     - Timeout issues */}
+
+## Next Steps
+
+<Cards>
+  <Card title="Configuration" href="/docs/getting-started/configuration" />
+  <Card title="Best Practices" href="/docs/guides/best-practices" />
+</Cards>
+

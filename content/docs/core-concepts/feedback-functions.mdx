@@ -1,0 +1,65 @@
+---
+title: Feedback Functions
+description: Using feedback to guide optimization in Trace
+---
+
+# Feedback Functions
+
+Feedback is how you tell Trace what's good or bad about your AI system's behavior.
+
+## What is Feedback?
+
+Unlike traditional machine learning which uses numerical losses, Trace accepts **any kind of feedback**:
+
+- ✅ Numerical rewards or losses
+- ✅ Natural language descriptions
+- ✅ Test pass/fail results
+- ✅ Compiler errors
+- ✅ User preferences
+- ✅ Multi-modal feedback
+
+## Creating Feedback Functions
+
+{/* TODO: Add examples of different feedback types */}
+
+### Numerical Feedback
+
+```python
+def feedback_fn(output, target):
+    error = abs(output - target)
+    return f"Error: {error}"
+```
+
+### Natural Language Feedback
+
+[Add example]
+
+### Test-Based Feedback
+
+[Add example]
+
+## Effective Feedback
+
+{/* TODO: Guidelines for writing good feedback:
+     - Be specific
+     - Include context
+     - Suggest improvements
+     - Examples of good vs bad feedback */}
+
+## Feedback in the Backward Pass
+
+```python
+optimizer.zero_feedback()
+optimizer.backward(output_node, feedback_string)
+optimizer.step()
+```
+
+{/* TODO: Explain the backward pass */}
+
+## Next Steps
+
+<Cards>
+  <Card title="Optimizers" href="/docs/optimizers" />
+  <Card title="Tutorials" href="/docs/tutorials" />
+</Cards>
+

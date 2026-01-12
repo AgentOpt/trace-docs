@@ -1,0 +1,68 @@
+---
+title: Installation
+description: How to install and set up Trace
+---
+
+# Installation
+
+Get started with Trace in just a few minutes.
+
+## Requirements
+
+- Python >= 3.10
+- pip or conda
+
+## Install via pip
+
+The easiest way to install Trace:
+
+```bash
+pip install trace-opt
+```
+
+## Development Installation
+
+If you want to contribute or work with the latest version:
+
+```bash
+git clone https://github.com/AgentOpt/Trace.git
+cd Trace
+pip install -e .
+```
+
+## Optional Dependencies
+
+### AutoGen Backend
+
+For backward compatibility with AutoGen:
+
+```bash
+pip install trace-opt[autogen]
+```
+
+### Test Dependencies
+
+For running tests:
+
+```bash
+pip install trace-opt[test]
+```
+
+## Verify Installation
+
+Test that everything is working:
+
+```python
+from opto.trace import node
+from opto.optimizers import OptoPrime
+
+print("✅ Trace installed successfully!")
+```
+
+## Next Steps
+
+<Cards>
+  <Card title="Quick Start" href="/docs/getting-started/quick-start" />
+  <Card title="Configuration" href="/docs/getting-started/configuration" />
+</Cards>
+

@@ -15,16 +15,48 @@ export function baseOptions(): BaseLayoutProps {
           <svg
             width="24"
             height="24"
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
-            aria-label="Logo"
+            aria-label="Trace Logo"
+            fill="none"
           >
-            <circle cx={12} cy={12} r={12} fill="currentColor" />
+            <path
+              d="M3 12 L9 6 L15 12 L21 6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M3 18 L9 12 L15 18 L21 12"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              opacity="0.5"
+            />
           </svg>
-          My App
+          <span className="font-bold">Trace</span>
         </>
       ),
     },
     // see https://fumadocs.dev/docs/ui/navigation/links
-    links: [],
+    links: [
+      {
+        text: 'Documentation',
+        url: '/docs',
+        active: 'nested-url',
+      },
+      {
+        text: 'GitHub',
+        url: 'https://github.com/AgentOpt/Trace',
+        external: true,
+      },
+      {
+        text: 'Paper',
+        url: 'https://arxiv.org/abs/2406.16218',
+        external: true,
+      },
+    ],
   };
 }

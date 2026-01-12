@@ -1,13 +1,104 @@
 ---
-title: Hello World
-description: Your first document
+title: Documentation
+description: Complete guide to building self-optimizing AI systems with Trace
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+# Trace Documentation
 
-## What is Next?
+Welcome to the Trace documentation! Trace is a PyTorch-like library for training AI agents end-to-end using general feedback.
+
+## Quick Links
 
 <Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
+  <Card title="Installation" href="/docs/getting-started/installation" icon="download" />
+  <Card title="Quick Start" href="/docs/getting-started/quick-start" icon="zap" />
+  <Card title="Core Concepts" href="/docs/core-concepts" icon="book" />
+  <Card title="API Reference" href="/docs/api-reference" icon="code" />
 </Cards>
+
+## What is Trace?
+
+Trace is a new AutoDiff-like tool for training AI systems with:
+
+- 🎯 **General Feedback**: Use rewards, natural language, test results, or any feedback
+- 📊 **Computation Graphs**: Automatic tracing of execution like PyTorch
+- 🔧 **Real Python Code**: Write actual functions, not strings
+- ⚡ **Multiple Optimizers**: Choose between OptoPrime, OPRO, and TextGrad
+- 🤖 **LLM Agnostic**: Works with OpenAI, Anthropic, and 100+ providers
+
+## Getting Started
+
+```bash
+pip install trace-opt
+```
+
+Then write your first optimizable function:
+
+```python
+from opto.trace import bundle
+from opto.optimizers import OptoPrime
+
+@bundle(trainable=True)
+def my_function(input):
+    """This function will be optimized."""
+    return input
+
+optimizer = OptoPrime(my_function.parameters())
+```
+
+## Documentation Structure
+
+### 📚 Getting Started
+Start here if you're new to Trace. Learn installation, basic concepts, and configuration.
+
+[→ Get Started](/docs/getting-started/installation)
+
+### 🧠 Core Concepts
+Deep dive into computation graphs, nodes, bundles, and feedback functions.
+
+[→ Learn Concepts](/docs/core-concepts)
+
+### 🚀 Optimizers
+Compare and learn about OptoPrime, OPRO, and TextGrad optimizers.
+
+[→ Choose Optimizer](/docs/optimizers)
+
+### 📖 Guides
+Best practices, LLM backends, debugging, and production tips.
+
+[→ Read Guides](/docs/guides)
+
+### 💡 Examples
+Hands-on examples from code optimization to multi-agent systems.
+
+[→ See Examples](/docs/examples)
+
+### 🎓 Tutorials
+Step-by-step tutorials converted from Jupyter notebooks.
+
+[→ Start Tutorial](/docs/tutorials)
+
+### 📘 API Reference
+Complete Python API documentation auto-generated from source.
+
+[→ API Docs](/docs/api-reference)
+
+## Community
+
+- [GitHub](https://github.com/AgentOpt/Trace) - Source code and issues
+- [Discord](https://discord.gg/4VeAvwFcWy) - Community chat
+- [Paper](https://arxiv.org/abs/2406.16218) - NeurIPS 2024
+- [Roadmap](https://docs.google.com/spreadsheets/d/1dMoECd2Soj6bATpkNDeaMxl0ymOYCtGq7ZiHr0JRdJU/edit?usp=sharing) - Future plans
+
+## Citation
+
+If you use Trace in your research, please cite:
+
+```bibtex
+@article{cheng2024trace,
+  title={Trace is the Next AutoDiff: Generative Optimization with Rich Feedback, Execution Traces, and LLMs},
+  author={Cheng, Ching-An and Nie, Allen and Swaminathan, Adith},
+  journal={arXiv preprint arXiv:2406.16218},
+  year={2024}
+}
+```
